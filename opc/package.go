@@ -35,12 +35,12 @@ func (p *Package) FindPart(partName string) *Part {
 	return nil
 }
 
-func (p *Package) FindPartsByRelationOn(base *Part, relType RelationType) []*Part {
+func (p *Package) FindPartsByRelationOn(base *Part, filter func(*Relationship) bool) []*Part {
 	dir, _ := path.Split(base.Name)
 	parts := make([]*Part, 0, 10)
 
 	for _, rel := range base.Relationships {
-		if rel.Type == relType {
+		if filter(rel) {
 			targetName := rel.Target
 			if !path.IsAbs(targetName) {
 				targetName = path.Clean(path.Join(dir, targetName))

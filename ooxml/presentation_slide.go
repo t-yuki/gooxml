@@ -102,7 +102,6 @@ func buildPresentationSlide(pkg *opc.Package, partName string, in io.Reader) err
 	slide := &PresentationSlide{}
 	dec := xml.NewDecoder(in)
 	if err := dec.Decode(slide); err != nil {
-		panic(err)
 		return err
 	}
 	part := pkg.FindPart(partName)

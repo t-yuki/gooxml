@@ -14,7 +14,7 @@ const (
 )
 
 type Relationship struct {
-	Id     string       `xml:",attr"`
+	ID     string       `xml:"Id,attr"`
 	Type   RelationType `xml:",attr"`
 	Target string       `xml:",attr"`
 }
