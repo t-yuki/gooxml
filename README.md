@@ -1,6 +1,11 @@
 Office Open XML Library for Go
 ===
-**Not working yet and T.B.D.**
+**Early Access: pptx2md is working as a demo**
+
+```
+go get -ugithub.com/t-yuki/gooxml/cmd/pptx2md
+pptx2md example.pptx
+```
 
 Authors
 -------
